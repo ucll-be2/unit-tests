@@ -57,7 +57,7 @@ public class ActorServiceTest {
         Mockito
                 .when(actorRepository.save(Mockito.any(Actor.class)))
                 .thenAnswer(invocation -> {
-                    var actor = (Actor) invocation.getArguments()[0];
+                    Actor actor = invocation.getArgument(0);
                     actor.setId(1L);
                     return actor;
                 });
